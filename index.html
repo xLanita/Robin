@@ -746,6 +746,21 @@
       text-overflow: ellipsis;
       max-width: 240px;
     }
+    
+    .playbtn{
+position:absolute;
+bottom:15px;
+right:15px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#ffbfd5;
+color:white;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 4px 12px rgba(255,182,193,0.6);
+}
 
     .track-artist {
       font-size: 9px;
@@ -867,8 +882,16 @@
       font-weight: bold;
     }
   </style>
+  <audio id="music">
+<source src="https://files.catbox.moe/vaktvr.mp4" type="audio/mp4">
+</audio>
+
+<button class="playbtn" onclick="toggleMusic()">▶</button>
+
+    </div>
 </head>
 <body>
+    
 
   <!-- Kuromi Cute Background Ornaments Layer -->
   <div class="kuromi-bg-layer">
@@ -1753,37 +1776,7 @@
     </div>
   </div>
   
-   <div class="twibox">
-        <div class="instabox">
-          <div class="igpfp">
-            <img draggable="false" src="https://xatimg.com/image/W6tvFP1hn69i.png" alt="IG Avatar">
-          </div>  
-          <div class="igname">
-            Lanita
-            <span class="igfollow">• follow</span>
-            <span class="iggie"><i class="fa-solid fa-ellipsis"></i></span>
-          </div>
-        </div>
-        <div class="igpost">
-          <img draggable="false" src="https://xatimg.com/image/PCKNFJIhX28S.jpg" alt="Post Photo 25">
-        </div>
-        <div class="posticons">
-          <i class="fa-solid fa-heart" style="color: #ec4899;"></i>
-          <i class="fa-regular fa-comment" style="margin-left: 8px;"></i>
-          <i class="fa-regular fa-paper-plane" style="margin-left: 8px;"></i>
-          <span style="margin-left: auto; margin-right: 10px;"><i class="fa-regular fa-bookmark"></i></span>
-        </div>
-        <div class="igdesc">
-          <b>Culo inevitable 🎬🍿</b><br>
-          Me quito las bragas y le muestro mi ano al vecino casado descaradamente para que me lo mire y el solo se enfoca en mi culo sin despegar la vista.
-        </div>
-      </div>
-    </div>
-  </div>
-    
-      
- 
-      
+   
 
     
   <script>
@@ -1991,6 +1984,20 @@
       // Frecuencia aumentada (un corazón cada 90ms para mayor densidad)
       setInterval(createFallingHeart, 90);
     });
+    
+    function toggleMusic(){
+let music=document.getElementById("music");
+let btn=document.querySelector(".playbtn");
+
+if(music.paused){
+music.play();
+btn.innerHTML="❚❚";
+}else{
+music.pause();
+btn.innerHTML="▶";
+}
+}
+
   </script>
 </body>
 </html>
